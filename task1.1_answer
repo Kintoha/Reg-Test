@@ -356,3 +356,17 @@ Date:   Sat Aug 26 21:36:23 2017 +0400
 evgeny@EvgenyPC:~/git/git1$ git branch feature1
 evgeny@EvgenyPC:~/git/git1$ git checkout feature1
 Переключено на ветку «feature1»
+evgeny@EvgenyPC:~/git/git2/Reg-Test$ git branch feature2
+evgeny@EvgenyPC:~/git/git2/Reg-Test$ git fetch origin
+remote: Counting objects: 4, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 4 (delta 1), reused 4 (delta 1), pack-reused 0
+Распаковка объектов: 100% (4/4), готово.
+Из https://github.com/Kintoha/Reg-Test
+ * [новая ветка]     feature1   -> origin/feature1
+evgeny@EvgenyPC:~/git/git2/Reg-Test$ git merge origin/feature1
+Обновление e47af7f..0666a2b
+Fast-forward
+ fileB          |   3 +-
+ task1.1_answer | 107 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 109 insertions(+), 1 deletion(-)
