@@ -249,3 +249,31 @@ remote: Total 6 (delta 4), reused 6 (delta 4), pack-reused 0
 Fast-forward
  task1.1_answer | 25 +++++++++++++++++++++++++
  1 file changed, 25 insertions(+)
+evgeny@EvgenyPC:~/git/git2/Reg-Test$ git add -A
+evgeny@EvgenyPC:~/git/git2/Reg-Test$ git commit -m "Создали ветку feature2"
+[master 1fda040] Создали ветку feature2
+ 1 file changed, 14 insertions(+)
+evgeny@EvgenyPC:~/git/git2/Reg-Test$ git remote add github https://github.com/Kintoha/Reg-Test
+evgeny@EvgenyPC:~/git/git2/Reg-Test$ git push github
+Username for 'https://github.com': kintoha.programmer@gmail.com
+Password for 'https://kintoha.programmer@gmail.com@github.com': 
+Подсчет объектов: 3, готово.
+Delta compression using up to 4 threads.
+Сжатие объектов: 100% (3/3), готово.
+Запись объектов: 100% (3/3), 533 bytes | 0 bytes/s, готово.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/Kintoha/Reg-Test
+   e47af7f..1fda040  master -> master
+evgeny@EvgenyPC:~/git/git2/Reg-Test$ git checkout feature2
+Переключено на ветку «feature2»
+evgeny@EvgenyPC:~/git/git2/Reg-Test$ git branch
+* feature2
+  master
+evgeny@EvgenyPC:~/git/git2/Reg-Test$ git branch -a
+* feature2
+  master
+  remotes/github/master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/feature1
+  remotes/origin/master
