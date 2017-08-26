@@ -147,3 +147,105 @@ index 0000000..8b80bef
 @@ -0,0 +1 @@
 +fileA fileA fileA
 \ No newline at end of file
+evgeny@EvgenyPC:~/git/git1$ git add -A
+evgeny@EvgenyPC:~/git/git1$ git commit -m "Добавил строку в fileA и удалил fileB"
+[master 1b62336] Добавил строку в fileA и удалил fileB
+ 3 files changed, 90 insertions(+), 2 deletions(-)
+ delete mode 100644 fileB
+evgeny@EvgenyPC:~/git/git1$ git push -u origin master
+Username for 'https://github.com': kintoha.programmer@gmail.com
+Password for 'https://kintoha.programmer@gmail.com@github.com': 
+Подсчет объектов: 4, готово.
+Delta compression using up to 4 threads.
+Сжатие объектов: 100% (3/3), готово.
+Запись объектов: 100% (4/4), 1.92 KiB | 0 bytes/s, готово.
+Total 4 (delta 0), reused 0 (delta 0)
+To https://github.com/Kintoha/Reg-Test.git
+   7ea0a42..1b62336  master -> master
+Ветка master отслеживает внешнюю ветку master из origin.
+evgeny@EvgenyPC:~/git/git2/Reg-Test$ git pull
+remote: Counting objects: 4, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 4 (delta 0), reused 4 (delta 0), pack-reused 0
+Распаковка объектов: 100% (4/4), готово.
+Из https://github.com/Kintoha/Reg-Test
+   7ea0a42..1b62336  master     -> origin/master
+Автослияние task1.1_answer
+КОНФЛИКТ (содержимое): Конфликт слияния в task1.1_answer
+Удаление fileB
+Не удалось провести автоматическое слияние; исправьте конфликты и сделайте коммит результата.
+evgeny@EvgenyPC:~/git/git2/Reg-Test$ git add -A
+evgeny@EvgenyPC:~/git/git2/Reg-Test$ git commit -m "Решение конфликта файла task1.1_answer"
+[master f1f68e9] Решение конфликта файла task1.1_answer
+evgeny@EvgenyPC:~/git/git2/Reg-Test$ git push -u origin master
+Username for 'https://github.com': kintoha.programmer@gmail.com
+Password for 'https://kintoha.programmer@gmail.com@github.com': 
+Подсчет объектов: 6, готово.
+Delta compression using up to 4 threads.
+Сжатие объектов: 100% (6/6), готово.
+Запись объектов: 100% (6/6), 793 bytes | 0 bytes/s, готово.
+Total 6 (delta 4), reused 0 (delta 0)
+remote: Resolving deltas: 100% (4/4), completed with 3 local objects.
+To https://github.com/Kintoha/Reg-Test
+   1b62336..f1f68e9  master -> master
+Ветка master отслеживает внешнюю ветку master из origin.
+evgeny@EvgenyPC:~/git/git1$ git log
+commit 1b62336508c17cfe2641ffbe67ca223918c80883
+Author: Евгений Субачёв <subachev@reg.ru>
+Date:   Sat Aug 26 22:00:10 2017 +0400
+
+    Добавил строку в fileA и удалил fileB
+
+commit 7ea0a428688f42f354754ef0fa010a803901a62a
+Author: Евгений Субачёв <subachev@reg.ru>
+Date:   Sat Aug 26 21:49:53 2017 +0400
+
+    Добавил файлы fileA и fileB
+
+commit 28b2e5241de7ee44758e43d94063cf458abeafbb
+Author: Евгений Субачёв <subachev@reg.ru>
+Date:   Sat Aug 26 21:36:23 2017 +0400
+
+    Добавил файл task1.1_answer и .gitignore
+evgeny@EvgenyPC:~/git/git2/Reg-Test$ git log
+commit f1f68e9c57870694447719534f6839be1fa49460
+Merge: c485977 1b62336
+Author: Евгений Субачёв <subachev@reg.ru>
+Date:   Sat Aug 26 22:08:08 2017 +0400
+
+    Решение конфликта файла task1.1_answer
+
+commit c485977b2655a426bc46456673475b873dc75969
+Author: Евгений Субачёв <subachev@reg.ru>
+Date:   Sat Aug 26 22:02:28 2017 +0400
+
+    Фиксируем правки git add -A
+
+commit 1b62336508c17cfe2641ffbe67ca223918c80883
+Author: Евгений Субачёв <subachev@reg.ru>
+Date:   Sat Aug 26 22:00:10 2017 +0400
+
+    Добавил строку в fileA и удалил fileB
+
+commit 7ea0a428688f42f354754ef0fa010a803901a62a
+Author: Евгений Субачёв <subachev@reg.ru>
+Date:   Sat Aug 26 21:49:53 2017 +0400
+
+    Добавил файлы fileA и fileB
+
+commit 28b2e5241de7ee44758e43d94063cf458abeafbb
+Author: Евгений Субачёв <subachev@reg.ru>
+Date:   Sat Aug 26 21:36:23 2017 +0400
+
+    Добавил файл task1.1_answer и .gitignore
+evgeny@EvgenyPC:~/git/git1$ git pull
+remote: Counting objects: 6, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 6 (delta 4), reused 6 (delta 4), pack-reused 0
+Распаковка объектов: 100% (6/6), готово.
+Из https://github.com/Kintoha/Reg-Test
+   1b62336..f1f68e9  master     -> origin/master
+Обновление 1b62336..f1f68e9
+Fast-forward
+ task1.1_answer | 25 +++++++++++++++++++++++++
+ 1 file changed, 25 insertions(+)
