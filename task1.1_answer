@@ -249,3 +249,110 @@ remote: Total 6 (delta 4), reused 6 (delta 4), pack-reused 0
 Fast-forward
  task1.1_answer | 25 +++++++++++++++++++++++++
  1 file changed, 25 insertions(+)
+evgeny@EvgenyPC:~/git/git1$ git add -A
+evgeny@EvgenyPC:~/git/git1$ git commit -m "Восстанавливаю fileB"
+[master e47af7f] Восстанавливаю fileB
+ 2 files changed, 103 insertions(+)
+ create mode 100644 fileB
+evgeny@EvgenyPC:~/git/git1$ git push -u origin master
+Username for 'https://github.com': kintoha.programmer@gmail.com
+Password for 'https://kintoha.programmer@gmail.com@github.com': 
+Подсчет объектов: 4, готово.
+Delta compression using up to 4 threads.
+Сжатие объектов: 100% (3/3), готово.
+Запись объектов: 100% (4/4), 1.32 KiB | 0 bytes/s, готово.
+Total 4 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Kintoha/Reg-Test.git
+   f1f68e9..e47af7f  master -> master
+Ветка master отслеживает внешнюю ветку master из origin.
+evgeny@EvgenyPC:~/git/git2/Reg-Test$ git pull
+remote: Counting objects: 4, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 4 (delta 1), reused 4 (delta 1), pack-reused 0
+Распаковка объектов: 100% (4/4), готово.
+Из https://github.com/Kintoha/Reg-Test
+   f1f68e9..e47af7f  master     -> origin/master
+Обновление f1f68e9..e47af7f
+Fast-forward
+ fileB          |   1 +
+ task1.1_answer | 102 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 103 insertions(+)
+ create mode 100644 fileB
+evgeny@EvgenyPC:~/git/git1$ git log
+commit e47af7ff581863ddc9d286113f9159489a1c5a66
+Author: Евгений Субачёв <subachev@reg.ru>
+Date:   Sat Aug 26 22:28:12 2017 +0400
+
+    Восстанавливаю fileB
+
+commit f1f68e9c57870694447719534f6839be1fa49460
+Merge: c485977 1b62336
+Author: Евгений Субачёв <subachev@reg.ru>
+Date:   Sat Aug 26 22:08:08 2017 +0400
+
+    Решение конфликта файла task1.1_answer
+
+commit c485977b2655a426bc46456673475b873dc75969
+Author: Евгений Субачёв <subachev@reg.ru>
+Date:   Sat Aug 26 22:02:28 2017 +0400
+
+    Фиксируем правки git add -A
+
+commit 1b62336508c17cfe2641ffbe67ca223918c80883
+Author: Евгений Субачёв <subachev@reg.ru>
+Date:   Sat Aug 26 22:00:10 2017 +0400
+
+    Добавил строку в fileA и удалил fileB
+
+commit 7ea0a428688f42f354754ef0fa010a803901a62a
+Author: Евгений Субачёв <subachev@reg.ru>
+Date:   Sat Aug 26 21:49:53 2017 +0400
+
+    Добавил файлы fileA и fileB
+
+commit 28b2e5241de7ee44758e43d94063cf458abeafbb
+Author: Евгений Субачёв <subachev@reg.ru>
+Date:   Sat Aug 26 21:36:23 2017 +0400
+
+    Добавил файл task1.1_answer и .gitignore
+evgeny@EvgenyPC:~/git/git2/Reg-Test$ git log
+commit e47af7ff581863ddc9d286113f9159489a1c5a66
+Author: Евгений Субачёв <subachev@reg.ru>
+Date:   Sat Aug 26 22:28:12 2017 +0400
+
+    Восстанавливаю fileB
+
+commit f1f68e9c57870694447719534f6839be1fa49460
+Merge: c485977 1b62336
+Author: Евгений Субачёв <subachev@reg.ru>
+Date:   Sat Aug 26 22:08:08 2017 +0400
+
+    Решение конфликта файла task1.1_answer
+
+commit c485977b2655a426bc46456673475b873dc75969
+Author: Евгений Субачёв <subachev@reg.ru>
+Date:   Sat Aug 26 22:02:28 2017 +0400
+
+    Фиксируем правки git add -A
+
+commit 1b62336508c17cfe2641ffbe67ca223918c80883
+Author: Евгений Субачёв <subachev@reg.ru>
+Date:   Sat Aug 26 22:00:10 2017 +0400
+
+    Добавил строку в fileA и удалил fileB
+
+commit 7ea0a428688f42f354754ef0fa010a803901a62a
+Author: Евгений Субачёв <subachev@reg.ru>
+Date:   Sat Aug 26 21:49:53 2017 +0400
+
+    Добавил файлы fileA и fileB
+
+commit 28b2e5241de7ee44758e43d94063cf458abeafbb
+Author: Евгений Субачёв <subachev@reg.ru>
+Date:   Sat Aug 26 21:36:23 2017 +0400
+
+    Добавил файл task1.1_answer и .gitignore
+evgeny@EvgenyPC:~/git/git1$ git branch feature1
+evgeny@EvgenyPC:~/git/git1$ git checkout feature1
+Переключено на ветку «feature1»
