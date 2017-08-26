@@ -356,6 +356,21 @@ Date:   Sat Aug 26 21:36:23 2017 +0400
 evgeny@EvgenyPC:~/git/git1$ git branch feature1
 evgeny@EvgenyPC:~/git/git1$ git checkout feature1
 Переключено на ветку «feature1»
+evgeny@EvgenyPC:~/git/git1$ git add -A
+evgeny@EvgenyPC:~/git/git1$ git commit -m "Создал ветку feature1 и добавил строку в fileB"
+[feature1 0666a2b] Создал ветку feature1 и добавил строку в fileB
+ 2 files changed, 109 insertions(+), 1 deletion(-)
+evgeny@EvgenyPC:~/git/git1$ git push --all
+Username for 'https://github.com': kintoha.programmer@gmail.com
+Password for 'https://kintoha.programmer@gmail.com@github.com': 
+Подсчет объектов: 4, готово.
+Delta compression using up to 4 threads.
+Сжатие объектов: 100% (3/3), готово.
+Запись объектов: 100% (4/4), 904 bytes | 0 bytes/s, готово.
+Total 4 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Kintoha/Reg-Test.git
+ * [new branch]      feature1 -> feature1
 evgeny@EvgenyPC:~/git/git2/Reg-Test$ git branch feature2
 evgeny@EvgenyPC:~/git/git2/Reg-Test$ git fetch origin
 remote: Counting objects: 4, done.
@@ -370,3 +385,101 @@ Fast-forward
  fileB          |   3 +-
  task1.1_answer | 107 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
  2 files changed, 109 insertions(+), 1 deletion(-)
+evgeny@EvgenyPC:~/git/git2/Reg-Test$ git add -A
+evgeny@EvgenyPC:~/git/git2/Reg-Test$ git commit -m "Создали ветку feature2"
+[master 1fda040] Создали ветку feature2
+ 1 file changed, 14 insertions(+)
+evgeny@EvgenyPC:~/git/git2/Reg-Test$ git remote add github https://github.com/Kintoha/Reg-Test
+evgeny@EvgenyPC:~/git/git2/Reg-Test$ git push github
+Username for 'https://github.com': kintoha.programmer@gmail.com
+Password for 'https://kintoha.programmer@gmail.com@github.com': 
+Подсчет объектов: 3, готово.
+Delta compression using up to 4 threads.
+Сжатие объектов: 100% (3/3), готово.
+Запись объектов: 100% (3/3), 533 bytes | 0 bytes/s, готово.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/Kintoha/Reg-Test
+   e47af7f..1fda040  master -> master
+evgeny@EvgenyPC:~/git/git2/Reg-Test$ git checkout feature2
+Переключено на ветку «feature2»
+evgeny@EvgenyPC:~/git/git2/Reg-Test$ git branch
+* feature2
+  master
+evgeny@EvgenyPC:~/git/git2/Reg-Test$ git branch -a
+* feature2
+  master
+  remotes/github/master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/feature1
+  remotes/origin/master
+evgeny@EvgenyPC:~/git/git2/Reg-Test$ git add -A
+evgeny@EvgenyPC:~/git/git2/Reg-Test$ git commit -m "Переключился на feature2 и посмотрел список веток"
+[feature2 b5b52ef] Переключился на feature2 и посмотрел список веток
+ 1 file changed, 28 insertions(+)
+evgeny@EvgenyPC:~/git/git2/Reg-Test$ git push github
+Username for 'https://github.com': kintoha.programmer@gmail.com
+Password for 'https://kintoha.programmer@gmail.com@github.com': 
+Подсчет объектов: 3, готово.
+Delta compression using up to 4 threads.
+Сжатие объектов: 100% (3/3), готово.
+Запись объектов: 100% (3/3), 707 bytes | 0 bytes/s, готово.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/Kintoha/Reg-Test
+ * [new branch]      feature2 -> feature2
+evgeny@EvgenyPC:~/git/git1$ git pull
+remote: Counting objects: 6, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 6 (delta 4), reused 6 (delta 4), pack-reused 0
+Распаковка объектов: 100% (6/6), готово.
+Из https://github.com/Kintoha/Reg-Test
+ * [новая ветка]     feature2   -> origin/feature2
+   e47af7f..1fda040  master     -> origin/master
+У текущей ветки нет информации об отслеживании.
+Пожалуйста, укажите с какой веткой вы хотите слить изменения.
+Для дополнительной информации смотрите git-pull(1).
+
+    git pull <remote> <branch>
+
+Если вы хотите указать информацию о отслеживаемой ветке, выполните:
+
+    git branch --set-upstream-to=origin/<branch> feature1
+
+evgeny@EvgenyPC:~/git/git1$ git fetch origin
+evgeny@EvgenyPC:~/git/git1$ git branch
+* feature1
+  master
+evgeny@EvgenyPC:~/git/git1$ git pull
+У текущей ветки нет информации об отслеживании.
+Пожалуйста, укажите с какой веткой вы хотите слить изменения.
+Для дополнительной информации смотрите git-pull(1).
+
+    git pull <remote> <branch>
+
+Если вы хотите указать информацию о отслеживаемой ветке, выполните:
+
+    git branch --set-upstream-to=origin/<branch> feature1
+
+evgeny@EvgenyPC:~/git/git1$ git merge origin/master
+Обновление 0666a2b..1fda040
+Fast-forward
+ task1.1_answer | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+evgeny@EvgenyPC:~/git/git1$ git checkout master
+Переключено на ветку «master»
+Ваша ветка отстает от «origin/master» на 2 коммита и может быть перемотана вперед.
+  (используйте «git pull», чтобы обновить вашу локальную ветку)
+evgeny@EvgenyPC:~/git/git1$ git pull
+Обновление e47af7f..1fda040
+Fast-forward
+ fileB          |   3 +-
+ task1.1_answer | 121 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 123 insertions(+), 1 deletion(-)
+evgeny@EvgenyPC:~/git/git1$ git branch
+  feature1
+* master
+evgeny@EvgenyPC:~/git/git1$ git merge remotes/origin/feature2
+Автослияние task1.1_answer
+КОНФЛИКТ (содержимое): Конфликт слияния в task1.1_answer
+Не удалось провести автоматическое слияние; исправьте конфликты и сделайте коммит результата.
