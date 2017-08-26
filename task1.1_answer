@@ -483,3 +483,47 @@ evgeny@EvgenyPC:~/git/git1$ git merge remotes/origin/feature2
 Автослияние task1.1_answer
 КОНФЛИКТ (содержимое): Конфликт слияния в task1.1_answer
 Не удалось провести автоматическое слияние; исправьте конфликты и сделайте коммит результата.
+evgeny@EvgenyPC:~/git/git1$ git add -A
+evgeny@EvgenyPC:~/git/git1$ git merge remotes/origin/feature2
+fatal: Вы не завершили слияние (присутствует файл MERGE_HEAD).
+Выполните коммит ваших изменений, перед слиянием.
+evgeny@EvgenyPC:~/git/git1$ git merge remotes/origin/feature2
+error: Your local changes to the following files would be overwritten by merge:
+	task1.1_answer
+Please, commit your changes or stash them before you can merge.
+Aborting
+evgeny@EvgenyPC:~/git/git1$ git add -A
+evgeny@EvgenyPC:~/git/git1$ git commit -m "Решение конфликта task1.1_answer. Файл task1.1_answer содержит все ранее выполненные команды"
+[master cf3fa59] Решение конфликта task1.1_answer. Файл task1.1_answer содержит все ранее выполненные команды
+ 1 file changed, 113 insertions(+)
+evgeny@EvgenyPC:~/git/git1$ git push --all
+Username for 'https://github.com': kintoha.programmer@gmail.com
+Password for 'https://kintoha.programmer@gmail.com@github.com': 
+Подсчет объектов: 3, готово.
+Delta compression using up to 4 threads.
+Сжатие объектов: 100% (3/3), готово.
+Запись объектов: 100% (3/3), 1.38 KiB | 0 bytes/s, готово.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/Kintoha/Reg-Test.git
+   0666a2b..1fda040  feature1 -> feature1
+   1fda040..cf3fa59  master -> master
+evgeny@EvgenyPC:~/git/git1$ git log --pretty=format:"%h %s" --graph
+* cf3fa59 Решение конфликта task1.1_answer. Файл task1.1_answer содержит все ранее выполненные команды
+* 1fda040 Создали ветку feature2
+* 0666a2b Создал ветку feature1 и добавил строку в fileB
+* e47af7f Восстанавливаю fileB
+*   f1f68e9 Решение конфликта файла task1.1_answer
+|\  
+| * 1b62336 Добавил строку в fileA и удалил fileB
+* | c485977 Фиксируем правки git add -A
+|/  
+* 7ea0a42 Добавил файлы fileA и fileB
+* 28b2e52 Добавил файл task1.1_answer и .gitignore
+evgeny@EvgenyPC:~/git/git1$ git push origin --delete feature1
+Username for 'https://github.com': kintoha.programmer@gmail.com
+Password for 'https://kintoha.programmer@gmail.com@github.com': 
+To https://github.com/Kintoha/Reg-Test.git
+ - [deleted]         feature1
+evgeny@EvgenyPC:~/git/git1$ git branch -D feature1
+Ветка feature1 удалена (была 1fda040).
