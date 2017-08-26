@@ -59,3 +59,91 @@ remote: Compressing objects: 100% (3/3), done.
 Распаковка объектов: 100% (4/4), готово.
 remote: Total 4 (delta 0), reused 4 (delta 0), pack-reused 0
 Проверка соединения… готово.
+evgeny@EvgenyPC:~/git/git2/Reg-Test$ git status
+На ветке master
+Ваша ветка обновлена в соответствии с «origin/master».
+Изменения, которые не в индексе для коммита:
+  (используйте «git add <файл>…», чтобы добавить файл в индекс)
+  (используйте «git checkout -- <файл>…», чтобы отменить изменения
+   в рабочем каталоге)
+
+	изменено:      task1.1_answer
+
+Неотслеживаемые файлы:
+  (используйте «git add <файл>…», чтобы добавить в то, что будет включено в коммит)
+
+	fileA
+	fileB
+
+нет изменений добавленных для коммита
+(используйте «git add» и/или «git commit -a»)
+evgeny@EvgenyPC:~/git/git2/Reg-Test$ git add fileA fileB
+evgeny@EvgenyPC:~/git/git2/Reg-Test$ git commit -m "Добавил файлы fileA и fileB" 
+[master 7ea0a42] Добавил файлы fileA и fileB
+ 2 files changed, 2 insertions(+)
+ create mode 100644 fileA
+ create mode 100644 fileB
+evgeny@EvgenyPC:~/git/git2/Reg-Test$ git push -u origin master
+Username for 'https://github.com': kintoha.programmer@gmail.com
+Password for 'https://kintoha.programmer@gmail.com@github.com': 
+Подсчет объектов: 4, готово.
+Delta compression using up to 4 threads.
+Сжатие объектов: 100% (2/2), готово.
+Запись объектов: 100% (4/4), 416 bytes | 0 bytes/s, готово.
+Total 4 (delta 0), reused 0 (delta 0)
+To https://github.com/Kintoha/Reg-Test
+   28b2e52..7ea0a42  master -> master
+Ветка master отслеживает внешнюю ветку master из origin.
+git add -A
+evgeny@EvgenyPC:~/git/git1$ git commit -m "Добавил файл task1.1_answer и .gitignore"
+[master (корневой коммит) 28b2e52] Добавил файл task1.1_answer и .gitignore
+ 2 files changed, 37 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 task1.1_answer
+evgeny@EvgenyPC:~/git/git1$ git remote add origin https://github.com/Kintoha/Reg-Test.git
+evgeny@EvgenyPC:~/git/git1$ git push -u origin master
+Username for 'https://github.com': kintoha.programmer@gmail.com
+Password for 'https://kintoha.programmer@gmail.com@github.com': 
+Подсчет объектов: 4, готово.
+Delta compression using up to 4 threads.
+Сжатие объектов: 100% (3/3), готово.
+Запись объектов: 100% (4/4), 857 bytes | 0 bytes/s, готово.
+Total 4 (delta 0), reused 0 (delta 0)
+To https://github.com/Kintoha/Reg-Test.git
+ * [new branch]      master -> master
+Ветка master отслеживает внешнюю ветку master из origin.
+evgeny@EvgenyPC:~/git/git1$ clear
+[3;J
+evgeny@EvgenyPC:~/git/git1$ git pull
+remote: Counting objects: 4, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 4 (delta 0), reused 4 (delta 0), pack-reused 0
+Распаковка объектов: 100% (4/4), готово.
+Из https://github.com/Kintoha/Reg-Test
+   28b2e52..7ea0a42  master     -> origin/master
+Обновление 28b2e52..7ea0a42
+Fast-forward
+ fileA | 1 +
+ fileB | 1 +
+ 2 files changed, 2 insertions(+)
+ create mode 100644 fileA
+ create mode 100644 fileB
+evgeny@EvgenyPC:~/git/git1$ git status
+На ветке master
+Ваша ветка обновлена в соответствии с «origin/master».
+нечего коммитить, нет изменений в рабочем каталоге
+evgeny@EvgenyPC:~/git/git1$ git log -p fileA
+commit 7ea0a428688f42f354754ef0fa010a803901a62a
+Author: Евгений Субачёв <subachev@reg.ru>
+Date:   Sat Aug 26 21:49:53 2017 +0400
+
+    Добавил файлы fileA и fileB
+
+diff --git a/fileA b/fileA
+new file mode 100644
+index 0000000..8b80bef
+--- /dev/null
++++ b/fileA
+@@ -0,0 +1 @@
++fileA fileA fileA
+\ No newline at end of file
