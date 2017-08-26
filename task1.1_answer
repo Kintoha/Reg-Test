@@ -1,0 +1,36 @@
+evgeny@EvgenyPC:~/git/git1$ git init
+Инициализирован пустой репозиторий Git в /home/evgeny/git/git1/.git/
+evgeny@EvgenyPC:~/git/git1$ git config --global user.name "Евгений Субачёв"
+evgeny@EvgenyPC:~/git/git1$ git config --global user.email subachev@reg.ru
+evgeny@EvgenyPC:~/git/git1$ git config --list
+user.name=Евгений Субачёв
+user.email=subachev@reg.ru
+core.autocrlf=input
+core.safecrlf=true
+core.excludesfile=/home/evgeny/.gitexcludes
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+evgeny@EvgenyPC:~/git/git1$ git status
+На ветке master
+
+Начальный коммит
+
+Неотслеживаемые файлы:
+  (используйте «git add <файл>…», чтобы добавить в то, что будет включено в коммит)
+
+	task1.1
+
+ничего не добавлено в коммит, но есть неотслеживаемые файлы (используйте «git add», чтобы отслеживать их)
+evgeny@EvgenyPC:~/git/git1$ git status
+На ветке master
+
+Начальный коммит
+
+Неотслеживаемые файлы:
+  (используйте «git add <файл>…», чтобы добавить в то, что будет включено в коммит)
+
+	.gitignore
+
+ничего не добавлено в коммит, но есть неотслеживаемые файлы (используйте «git add», чтобы отслеживать их)
