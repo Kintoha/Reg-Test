@@ -34,3 +34,28 @@ evgeny@EvgenyPC:~/git/git1$ git status
 	.gitignore
 
 ничего не добавлено в коммит, но есть неотслеживаемые файлы (используйте «git add», чтобы отслеживать их)
+evgeny@EvgenyPC:~/git/git1$ git add -A
+evgeny@EvgenyPC:~/git/git1$ git commit -m "Добавил файл task1.1_answer и .gitignore"
+[master (корневой коммит) 28b2e52] Добавил файл task1.1_answer и .gitignore
+ 2 files changed, 37 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 task1.1_answer
+evgeny@EvgenyPC:~/git/git1$ git remote add origin https://github.com/Kintoha/Reg-Test.git
+evgeny@EvgenyPC:~/git/git1$ git push -u origin master
+Username for 'https://github.com': kintoha.programmer@gmail.com
+Password for 'https://kintoha.programmer@gmail.com@github.com': 
+Подсчет объектов: 4, готово.
+Delta compression using up to 4 threads.
+Сжатие объектов: 100% (3/3), готово.
+Запись объектов: 100% (4/4), 857 bytes | 0 bytes/s, готово.
+Total 4 (delta 0), reused 0 (delta 0)
+To https://github.com/Kintoha/Reg-Test.git
+ * [new branch]      master -> master
+Ветка master отслеживает внешнюю ветку master из origin.
+evgeny@EvgenyPC:~/git/git2$ git clone https://github.com/Kintoha/Reg-Test
+Клонирование в «Reg-Test»…
+remote: Counting objects: 4, done.
+remote: Compressing objects: 100% (3/3), done.
+Распаковка объектов: 100% (4/4), готово.
+remote: Total 4 (delta 0), reused 4 (delta 0), pack-reused 0
+Проверка соединения… готово.
